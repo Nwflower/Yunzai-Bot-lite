@@ -18,6 +18,7 @@
     "art-template": "^4.13.2",
     "chalk": "^5.0.1",
     "chokidar": "^3.5.3",
+    "https-proxy-agent": "5.0.1",
     "inquirer": "^8.2.4",
     "lodash": "^4.17.21",
     "log4js": "^6.5.2",
@@ -27,11 +28,11 @@
     "node-schedule": "^2.1.0",
     "node-xlsx": "^0.21.0",
     "oicq": "^2.3.1",
+    "patch-package": "^6.5.0",
     "pm2": "^5.2.0",
     "puppeteer": "^13.7.0",
     "redis": "^4.1.0",
-    "yaml": "^2.1.1",
-    "https-proxy-agent":"5.0.1"
+    "yaml": "^2.1.1"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
@@ -41,5 +42,10 @@
     "eslint-plugin-promise": "^6.0.0",
     "express": "^4.18.1",
     "express-art-template": "^1.0.1"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "oicq@2.3.1": "patches/oicq@2.3.1.patch"
+    }
   }
 }

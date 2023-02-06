@@ -7,6 +7,7 @@ services:
     # image: swr.cn-south-1.myhuaweicloud.com/sirly/yunzai-bot:v3plus   # 使用扩展镜像，包含ffmpeg和python
     # image: sirly/yunzai-bot:v3                                        # Docker Hub源
     # image: sirly/yunzai-bot:v3plus 
+    # user: "1000:1000" # 指定容器内用户,格式"UID:GID"（请先修改文件夹权限）
     restart: always
     # ports:
     #   - "50831:50831"                                                 # 映射锅巴插件端口，格式"主机端口:容器内部端口"
@@ -23,6 +24,9 @@ services:
       # - ./yunzai/plugins/xiaoyao-cvs-plugin:/app/Yunzai-Bot/plugins/xiaoyao-cvs-plugin    # 图鉴插件
       #### [警告] 受云崽架构和docker特性限制，使用锅巴插件安装的插件无法持久化，销毁容器后新安装的插件会消失，请谨慎使用 ####
       # - ./yunzai/plugins/Guoba-Plugin:/app/Yunzai-Bot/plugins/Guoba-Plugin                # 锅巴插件
+    environment:
+      - CUID=1000             # 宿主机运行 id -u 获取
+      - CGID=1000             # 宿主机运行 id -g 获取
     depends_on:
       redis: { condition: service_healthy }
     deploy:
