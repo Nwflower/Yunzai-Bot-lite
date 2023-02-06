@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "Yunzai-Bot",
+      "name": "Yunzai-Bot-lite",
       "script": "./app.js",
       "max_memory_restart": "512M",
       "restart_delay": 60000
